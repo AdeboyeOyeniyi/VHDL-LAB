@@ -1,0 +1,16 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity fullSubtractor is
+Port(a,b,bin: in std_logic;
+     d,br: out std_logic);
+end entity
+
+architecture dataflow of fullSubtractor is
+begin
+d <=a xor b xor bin;
+br<=((not a)and b) or((not a)and(not b)and bin) or (a and b and bin)
+end dataflow;
+
